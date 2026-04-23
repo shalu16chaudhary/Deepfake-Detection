@@ -53,6 +53,8 @@ if uploaded_file is not None:
             st.image(face_crop, channels="BGR", caption="Detected Face")
             
         if score < 0.5:
-            st.success(f"### RESULT: REAL (Confidence: {100*(1-score):.2f}%)")
+            st.success(f"### RESULT: AUTHENTIC (Real)")
+            st.info(f"Verification Score: {(1-score):.2f}")
         else:
-            st.error(f"### RESULT: FAKE (Confidence: {100*score:.2f}%)")
+            st.error(f"### RESULT: TAMPERED / LOW QUALITY (Fake)")
+            st.warning(f"Detection Probability: {score:.2f}")
