@@ -46,7 +46,7 @@ if uploaded_file is not None:
     with st.spinner('Analyzing...'):
         score, face_crop = predict_meso(image)
         
-    if face_crop == "No Face Detected":
+    if isinstance(face_crop, str) and face_crop == "No Face Detected":
         st.error("Could not find a face. Please upload a clearer photo.")
     else:
         with col2:
