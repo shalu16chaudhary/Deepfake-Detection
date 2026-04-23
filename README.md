@@ -1,33 +1,52 @@
-# MesoNet
+MesoNet: Deepfake Detection System
+Developed by: Shalu Chaudhary
 
-# MesoNet: Deepfake Detection System
-**Developed by: Shalu**
+MesoNet is an advanced deep learning framework implemented to verify the authenticity of digital media. This system utilizes specialized Convolutional Neural Network (CNN) architectures to detect face tampering, specifically targeting Deepfake and Face2Face manipulations in both images and video frames.
 
-MesoNet ek advanced deep learning framework hai jise maine digital media ki authenticity verify karne ke liye implement kiya hai. [cite_start]Yeh system videos aur images mein face tampering (Deepfake aur Face2Face) ko detect karne ke liye specialized CNN architectures ka istemal karta hai[cite: 12, 13].
+Introduction
+The rapid rise of Deepfake technology in digital media has created significant risks regarding misinformation and digital forgery. This project adopts an AI-driven approach that focuses on the mesoscopic properties of an image. By analyzing these subtle details, the system can effectively distinguish between authentic and manipulated content with high precision.
 
-## Introduction
-[cite_start]Digital media mein deepfake technology ka badhta upyog disinformation ka khatra paida kar raha hai[cite: 5, 7]. [cite_start]Maine is project mein ek AI-driven approach adopt ki hai jo image ki **mesoscopic properties** par focus karti hai taaki manipulated content ko high accuracy ke saath pakda ja sake[cite: 13, 19].
+Deepfake Detection Accuracy: > 98%
 
-* [cite_start]**Deepfake Detection Success**: > 98% [cite: 123]
-* [cite_start]**Face2Face Detection Success**: > 95% [cite: 123, 407]
+Face2Face Detection Accuracy: > 95%
 
-## System Architecture (Proposed System)
-[cite_start]Maine is system ko ek multi-stage pipeline mein design kiya hai jo **Waterfall Development Model** ko follow karta hai[cite: 86, 275].
+System Architecture (Proposed System)
+The system is designed as a multi-stage pipeline, following the Waterfall Development Model to ensure a structured and reliable workflow.
 
-* [cite_start]**Preprocessing Module**: `face_recognition` library ka use karke chehre ko isolate kiya jata hai aur background noise hatayi jati hai[cite: 159, 195].
-* [cite_start]**Feature Extraction Module**: Meso4 aur MesoInception architectures ka use karke subtle pixel artifacts aur inconsistencies extract kiye jate hain[cite: 87, 161].
-* [cite_start]**Classification Module**: Pre-trained weights (.h5 files) ka use karke final "Real" ya "Fake" ka decision liya jata hai[cite: 117, 119].
+Preprocessing Module: Utilizing computer vision techniques (OpenCV/Haar Cascades) to isolate the face, normalize the input, and remove background noise for better analysis.
 
-## Tech Stack & Requirements
-Is project ko maine modern Python environment mein setup kiya hai:
-* **Languages**: Python 3.11
-* [cite_start]**Deep Learning**: TensorFlow 2.x, Keras [cite: 166, 208]
-* [cite_start]**Interface**: Streamlit (For Web Dashboard) [cite: 182, 374]
-* [cite_start]**Image Processing**: OpenCV, face_recognition, Imageio [cite: 159, 162]
+Feature Extraction Module: Leverages Meso4 and MesoInception architectures to extract subtle pixel-level artifacts and inconsistencies often left behind by AI-generation tools.
+
+Classification Module: Employs pre-trained weights (.h5 files) to perform binary classification, providing a final decision of "Real" or "Fake."
+
+Tech Stack & Requirements
+The project is built within a modern Python-based ecosystem:
+
+Programming Language: Python 3.11
+
+Deep Learning Framework: TensorFlow 2.x, Keras
+
+Web Interface: Streamlit (For a real-time web dashboard)
+
+Image Processing: OpenCV, NumPy, Imageio
+
+Deployment & Usage
+The application is optimized for cloud deployment and can be accessed via a web browser. It provides an intuitive interface where users can upload media files and receive instant verification results with confidence scores.
+
+Conclusion
+This system provides a robust and adaptive approach to safeguarding digital media integrity. Future enhancements will focus on real-time video stream detection and integrating more complex spatio-temporal models to counter evolving forgery techniques.
+
+Maintained by: Shalu Final Year Student | B.Tech - Computer Science & Engineering
+Eshan College of Engineering
 
 ## Usage Instructions
 
 ### 1. Web Dashboard Launch Karein
-Interface ke saath demo dikhane ke liye terminal mein ye command chalayein:
-```bash
+To demonstrate the project with the graphical user interface, execute the following command in your terminal:
+
 streamlit run meso_ui.py
+
+### 2. Manual Example Prediction
+For quick testing via a script without the web interface, use:
+
+python example.py
