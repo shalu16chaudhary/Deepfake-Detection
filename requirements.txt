@@ -1,0 +1,6 @@
+streamlit
+tensorflow-cpu
+numpy
+opencv-python-headless
+face-recognition
+imageio
